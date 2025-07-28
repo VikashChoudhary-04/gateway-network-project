@@ -1,0 +1,130 @@
+#########################################
+
+Gateway Project - Cisco CLI Commands
+
+#########################################
+
+------------------------------
+
+Router8 Configuration
+
+------------------------------
+
+enable 
+conf t 
+interface g0/0 
+ip address 10.0.0.1 255.255.255.0 
+no shutdown 
+exit 
+interface g0/1 
+ip address 10.0.3.1 255.255.255.0 
+no shutdown 
+exit 
+ip route 10.0.1.0 255.255.255.0 10.0.3.2 
+ip route 10.0.2.0 255.255.255.0 10.0.3.2 
+exit
+
+------------------------------
+
+Router9 Configuration
+
+------------------------------
+
+enable 
+conf t 
+interface g0/0 
+ip address 10.0.3.2 255.255.255.0 
+no shutdown 
+exit 
+interface g0/1 
+ip address 10.0.1.1 255.255.255.0 
+no shutdown 
+exit 
+interface g0/2 
+ip address 10.0.5.2 255.255.255.0 
+no shutdown 
+exit 
+ip route 10.0.0.0 255.255.255.0 10.0.3.1 
+ip route 10.0.2.0 255.255.255.0 10.0.5.1 
+exit
+
+------------------------------
+
+Router10 Configuration
+
+------------------------------
+
+enable 
+conf t 
+interface g0/0 
+ip address 10.0.2.1 255.255.255.0 
+no shutdown 
+exit 
+interface g0/1 
+ip address 10.0.5.1 255.255.255.0 
+no shutdown 
+exit 
+ip route 10.0.0.0 255.255.255.0 10.0.5.2 
+ip route 10.0.1.0 255.255.255.0 10.0.5.2 
+exit
+
+------------------------------
+
+PC5 Configuration
+
+------------------------------
+
+IP Address: 10.0.0.2 
+Subnet Mask: 255.255.255.0 
+Default Gateway: 10.0.0.1
+
+------------------------------
+
+PC6 Configuration
+
+------------------------------
+
+IP Address: 10.0.1.2 
+Subnet Mask: 255.255.255.0 
+Default Gateway: 10.0.1.1
+
+------------------------------
+
+PC7 Configuration
+
+------------------------------
+
+IP Address: 10.0.2.2 
+Subnet Mask: 255.255.255.0 
+Default Gateway: 10.0.2.1
+
+------------------------------
+
+Final Testing (use ping)
+
+------------------------------
+
+From PC5:
+
+ping 10.0.1.2 
+ping 10.0.2.2
+
+From PC6:
+
+ping 10.0.0.2 
+ping 10.0.2.2
+
+From PC7:
+
+ping 10.0.0.2 
+ping 10.0.1.2
+
+From each Router (to test neighbors):
+
+ping [next-hop IPs]
+
+e.g., from Router8:
+
+ping 10.0.3.2 
+ping 10.0.1.2 
+ping 10.0.2.2
