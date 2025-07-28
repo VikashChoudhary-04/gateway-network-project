@@ -1,0 +1,48 @@
+============================
+ROUTER CONFIGURATION DETAILS
+============================
+
+📌 Common Settings for All Routers:
+- Subnet Mask: 255.255.255.0
+- Static Routing is used to manually define paths
+
+----------------------------------
+
+🛠 Router8 Configuration
+
+Interface IPs:
+- GigabitEthernet0/0: 10.0.0.1 (Connected to PC5)
+- GigabitEthernet0/1: 10.0.3.1 (Connected to Router9)
+
+Static Routes:
+- ip route 10.0.1.0 255.255.255.0 10.0.3.2
+- ip route 10.0.2.0 255.255.255.0 10.0.3.2
+
+----------------------------------
+
+🛠 Router9 Configuration
+
+Interface IPs:
+- GigabitEthernet0/0: 10.0.3.2 (Connected to Router8)
+- GigabitEthernet0/1: 10.0.1.1 (Connected to PC6)
+- GigabitEthernet0/2: 10.0.5.2 (Connected to Router10)
+
+Static Routes:
+- ip route 10.0.0.0 255.255.255.0 10.0.3.1
+- ip route 10.0.2.0 255.255.255.0 10.0.5.1
+
+----------------------------------
+
+🛠 Router10 Configuration
+
+Interface IPs:
+- GigabitEthernet0/0: 10.0.2.1 (Connected to PC7)
+- GigabitEthernet0/1: 10.0.5.1 (Connected to Router9)
+
+Static Routes:
+- ip route 10.0.0.0 255.255.255.0 10.0.5.2
+- ip route 10.0.1.0 255.255.255.0 10.0.5.2
+
+============================
+All routers configured successfully.
+============================

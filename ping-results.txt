@@ -1,0 +1,41 @@
+============================
+PING TEST RESULTS (STATIC ROUTING)
+============================
+
+📍 PC TO PC CONNECTIVITY
+
+✔ PC5 (10.0.0.2) → PC6 (10.0.1.2) : SUCCESS
+✔ PC5 (10.0.0.2) → PC7 (10.0.2.2) : SUCCESS
+✔ PC6 (10.0.1.2) → PC5 (10.0.0.2) : SUCCESS
+✔ PC6 (10.0.1.2) → PC7 (10.0.2.2) : SUCCESS
+✔ PC7 (10.0.2.2) → PC5 (10.0.0.2) : SUCCESS
+✔ PC7 (10.0.2.2) → PC6 (10.0.1.2) : SUCCESS
+
+----------------------------------
+
+📍 ROUTER TO ROUTER CONNECTIVITY
+
+✔ Router8 → Router9 : SUCCESS
+✔ Router8 → Router10 : SUCCESS
+✔ Router9 → Router8 : SUCCESS
+✔ Router9 → Router10 : SUCCESS
+✔ Router10 → Router8 : SUCCESS
+✔ Router10 → Router9 : SUCCESS
+
+----------------------------------
+
+📍 ROUTER TO PC CONNECTIVITY
+
+✔ Router8 → PC5 : SUCCESS
+✔ Router9 → PC6 : SUCCESS
+✔ Router10 → PC7 : SUCCESS
+
+All pings show *80-100% success rate*.
+
+📎 All devices are properly assigned IP addresses.
+📎 Subnet mask used throughout the network: 255.255.255.0
+📎 All routing is configured using *static routes*.
+
+============================
+NETWORK STATUS: ✅ FULLY CONNECTED
+============================
